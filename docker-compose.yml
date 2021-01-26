@@ -1,0 +1,17 @@
+# Add the catapp service
+  catapp1:
+    image: mikesir87/cats:1.0
+    container_name: catapp1
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.catapp1.rule=Host(`thomas-chateau.net`) && PathPrefix(`/cat1`) "
+      - "traefik.http.routers.catapp1.entrypoints=web"
+
+# Add the catapp service
+  catapp2:
+    image: mikesir87/cats:1.0
+    container_name: catapp2
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.catapp2.rule=Host(`thomas-chateau.net`) && PathPrefix(`/cat2`) "
+      - "traefik.http.routers.catapp2.entrypoints=web"
