@@ -1,3 +1,5 @@
+version: '3.7'
+services:
 # Add the catapp service
   catapp1:
     image: mikesir87/cats:1.0
@@ -6,6 +8,8 @@
       - "traefik.enable=true"
       - "traefik.http.routers.catapp1.rule=Host(`thomas-chateau.net`) && PathPrefix(`/cat1`) "
       - "traefik.http.routers.catapp1.entrypoints=web"
+    networks:
+      - netcatapp
 
 # Add the catapp service
   catapp2:
@@ -15,3 +19,10 @@
       - "traefik.enable=true"
       - "traefik.http.routers.catapp2.rule=Host(`thomas-chateau.net`) && PathPrefix(`/cat2`) "
       - "traefik.http.routers.catapp2.entrypoints=web"
+    networks:
+      - netcatapp
+
+networks:
+  netcatapp:
+    external: 
+      name: vps-traefik_webgateway
