@@ -6,7 +6,7 @@ services:
     container_name: catapp1
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.catapp1.rule=Host(`cat1.thomas-chateau.net`) && Path(`/`) "
+      - "traefik.http.routers.catapp1.rule=Host(`cat1.thomas-chateau.net`)"
       - "traefik.http.routers.catapp1.entrypoints=http"
     networks:
       - netcatapp
