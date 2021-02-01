@@ -6,8 +6,8 @@ services:
     container_name: catapp1
     labels:
       - "traefik.enable=true"
-      # - "traefik.http.routers.catapp1.rule=Host(`thomas-chateau.net`) && Path(`/cat1`) "
-      - "traefik.http.routers.Router-1.entrypoints=http"
+      - "traefik.http.routers.catapp1.rule=Host(`cat1.thomas-chateau.net`) && Path(`/`) "
+      - "traefik.http.routers.catapp1.entrypoints=http"
     networks:
       - netcatapp
 
@@ -17,8 +17,8 @@ services:
     container_name: catapp2
     labels:
       - "traefik.enable=true"
-      # - "traefik.http.routers.catapp2.rule=Host(`thomas-chateau.net`) && Path(`/cat2`) "
-      - "traefik.http.routers.Router-2.entrypoints=http"
+      - "traefik.http.routers.catapp2.rule=Host(`cat2.thomas-chateau.net`)"
+      - "traefik.http.routers.catapp2.entrypoints=http"
     networks:
       - netcatapp
 
