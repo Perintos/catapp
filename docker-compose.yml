@@ -7,7 +7,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.catapp1.rule=Host(`cat1.thomas-chateau.net`)"
-      - "traefik.http.routers.catapp1.entrypoints=http"
+      - "traefik.http.routers.catapp1.entrypoints=web"
     networks:
       - netcatapp
 
@@ -18,7 +18,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.catapp2.rule=Host(`cat2.thomas-chateau.net`)"
-      - "traefik.http.routers.catapp2.entrypoints=http"
+      - "traefik.http.routers.catapp2.entrypoints=web"
     networks:
       - netcatapp
 
